@@ -1,0 +1,16 @@
+{% extends 'base/admin.html.twig' %}
+
+{% block title 'Petitblog : Admin' %}
+
+{% block admin %}
+
+    <div class="content">
+        <div class="app_title">
+            <h1 class="title">{{ controller_name }}</h1>
+            <a href="{{ path('app_home') }}" class="title-link">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

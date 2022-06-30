@@ -1,0 +1,21 @@
+{% extends 'base/base.html.twig' %}
+
+{% block styles %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('admin') }}
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('admin') }}
+{% endblock %}
+
+{% block body %}
+    {% include 'include/nav.html.twig' %}
+
+    <div id="admin">
+        {% block admin %}{% endblock %}
+    </div>
+
+    {% include 'include/footer.html.twig' %}
+{% endblock %}

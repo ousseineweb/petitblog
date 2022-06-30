@@ -1,0 +1,26 @@
+#admin {
+    min-height: 478px;
+}
+
+.app_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.app_title .title-link {
+    text-decoration: none;
+    color: var(--color);
+}
+.app_title .title-link:hover {
+    text-decoration: none;
+    color: var(--color-secondary);
+}
+
+.app_title .title-link .fa-house  {
+    font-size: 1.6rem;
+}
