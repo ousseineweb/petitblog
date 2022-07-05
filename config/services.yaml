@@ -22,3 +22,13 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # typesense service
+    App\Controller\Main\HomeController:
+        arguments:
+            $postFinder: '@typesense.finder.posts'
+
+    # search components
+    App\Components\SearchComponent:
+        arguments:
+            $postFinder: '@typesense.finder.posts'

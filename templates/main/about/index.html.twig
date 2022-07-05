@@ -1,0 +1,14 @@
+{% extends 'base/main.html.twig' %}
+
+{% block title 'Petitblog : A propos' %}
+
+{% block main %}
+
+    <div class="content">
+        <h1 class="title">{{ about.title }}</h1>
+        <div class="contain">
+            <article>{{ about.content | raw }}</article>
+        </div>
+    </div>
+
+{% endblock %}

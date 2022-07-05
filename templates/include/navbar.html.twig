@@ -13,47 +13,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">A propos</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a class="nav-link" href="{{ path('app_admin') }}">Admin</a>
+                    {% endif %}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_admin') }}">Admin</a>
+                    <a class="nav-link active" aria-current="page" href="{{ path('app_about') }}">A propos</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
-                <button class="btn-search" type="submit">
-                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                        <path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5
+
+            <a href="{{ path('app_search') }}" class="btn-search" type="button">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5
                         9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44
                         7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5
                         8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/>
-                    </svg>
-                </button>
-            </form>
-            <div class="log">
-                {% if app.user %}
-                    <div class="dropdown logout">
-                        <span id="dropdownMenuButton1" data-bs-toggle="dropdown">
-                            <i class="fa-solid fa-user"></i>
-                        </span>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Ousseine</a></li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <span>Déconnexion</span>
-                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                {% else %}
-                    <div class="login">
-                        <a href="#" class="btn_login">
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        </a>
-                    </div>
-                {% endif %}
-            </div>
+                </svg>
+            </a>
         </div>
     </div>
 </nav>

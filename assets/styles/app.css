@@ -27,6 +27,56 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+/* Buttons */
+.btn_new,
+.btn_save {
+    background-color: var(--border-color);
+    color: var(--color);
+}
+.btn_new:hover,
+.btn_save:hover {
+    color: var(--color-secondary);
+}
+
+.btn_cancel {
+    background-color: var(--header);
+    color: var(--color-secondary);
+}
+.btn_cancel:hover {
+    color: var(--background-secondary);
+}
+.card .btn_cancel {
+    display: block !important;
+}
+.card .btn_save {
+    margin-right: 20px;
+}
+
+.btn_reply {
+    text-decoration: none;
+    color: var(--color-secondary);
+}
+.btn_reply:hover {
+    color: var(--color);
+}
+/* Buttons */
+
+/* Form */
+.form-control {
+    background: var(--background-secondary);
+    color: var(--color);
+    border: none;
+    border-radius: 0;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-control:focus {
+    box-shadow: none;
+    background: var(--background-secondary);
+    color: var(--color);
+}
+/* Form */
 .content {
     width: 100%;
     max-width: 800px;
@@ -55,6 +105,7 @@ nav.bg-dark {
 }
 
 nav.navbar .navbar-content {
+    position: relative;
     display: flex;
     flex-wrap: inherit;
     align-items: center;
@@ -109,26 +160,7 @@ nav.navbar form {
     position: relative;
 }
 
-nav.navbar form .form-control {
-    display: block;
-    width: 280px;
-    padding: .375rem .25rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--color);
-    background-color: var(--header) !important;
-    background-clip: padding-box;
-    border: none;
-    border-bottom: 1px solid var(--border-color);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 0;
-}
-
-
-nav.navbar form .btn-search {
+nav.navbar .btn-search {
     background-color: transparent;
     outline: none;
     border: none;
@@ -140,10 +172,6 @@ nav.navbar form .btn-search {
     fill: currentColor;
     color: var(--border-color);
     cursor: pointer;
-}
-
-nav.navbar form .form-control:focus {
-    box-shadow: none;
 }
 
 nav.navbar .log {
@@ -245,3 +273,16 @@ footer .copyright span {
 
 }
 /* ================================== FOOTER END ================================== */
+
+/* ================================== SECURITY START ================================ */
+.security {
+    width: 100%;
+    max-width: 350px;
+    margin: 2rem auto 0;
+    padding: 20px;
+}
+
+.security .title {
+    margin-bottom: 1.5rem;
+}
+/* ================================== SECURITY END ================================== */

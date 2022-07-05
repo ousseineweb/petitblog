@@ -1,0 +1,40 @@
+{% if comment.parent == null %}
+
+    <div class="card" id="comment-{{ comment.id }}">
+        <div class="card-header">
+            <i class="fa-solid fa-user"></i>
+            <h5>{{ comment.name }}</h5>
+        </div>
+        <div class="card-body">
+            <div class="date">
+                <i class="fa-solid fa-calendar"></i>&nbsp;
+                <span>Commenter le {{ comment.publishedAt | date('d-m-Y') }}</span>
+            </div>
+            <div class="card-content">{{ comment.content | raw }}</div>
+            <a href="#" id="js-btn-reply" class="btn_reply" data-reply data-id="{{ comment.id }}">
+                Répondre <i class="fa-solid fa-reply"></i>
+            </a>
+        </div>
+    </div>
+
+    {% for reply in comment.replies %}
+        <div class="card-reply">
+            <div class="card" id="reply-{{ reply.id }}">
+                <div class="card-header">
+                    <i class="fa-solid fa-user"></i>
+                    <h5>{{ reply.name }}</h5>
+                </div>
+                <div class="card-body">
+                    <div class="date">
+                        <i class="fa-solid fa-calendar"></i>&nbsp;
+                        <span>Commenter le {{ reply.publishedAt | date('d-m-Y') }}</span>
+                    </div>
+                    <div class="card-content">{{ reply.content | raw }}</div>
+                    <a href="#" id="js-btn-reply" class="btn_reply" data-reply data-id="{{ comment.id }}">
+                        Répondre <i class="fa-solid fa-reply"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}

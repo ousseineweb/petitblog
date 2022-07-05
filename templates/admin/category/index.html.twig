@@ -1,0 +1,43 @@
+{% extends 'base/admin.html.twig' %}
+
+{% block title 'Admin : Category' %}
+
+{% block admin %}
+    <div class="content">
+        <div class="app_title">
+            <h1 class="title">Category index</h1>
+            <div class="btns">
+                <a class="btn btn-sm btn_new" href="{{ path('app_admin_category_new') }}">Ajouter</a>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Date de création</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in categories %}
+                <tr>
+                    <td>#{{ category.id }}</td>
+                    <td>{{ category.name }}</td>
+                    <td>{{ category.createdAt ? category.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>
+                        <a class="btn btn-sm btn_show" href="{{ path('app_admin_category_show', {'id': category.id}) }}">show</a>
+                        <a class="btn btn-sm btn_edit" href="{{ path('app_admin_category_edit', {'id': category.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

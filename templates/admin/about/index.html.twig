@@ -1,0 +1,44 @@
+{% extends 'base/admin.html.twig' %}
+
+{% block title 'Admin: A propos' %}
+
+{% block admin %}
+    <div class="content">
+        <div class="app_title">
+            <h1 class="title">About index</h1>
+            <div class="btns">
+                <a class="btn btn-sm btn_new" href="{{ path('app_admin_about_new') }}">Ajouter</a>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Date de création</th>
+                <th>Date de modification</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for about in abouts %}
+                <tr>
+                    <td>#{{ about.id }}</td>
+                    <td>{{ about.title }}</td>
+                    <td>{{ about.createdAt ? about.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ about.updatedAt ? about.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>
+                        <a class="btn btn-sm btn_show" href="{{ path('app_admin_about_show', {'id': about.id}) }}">show</a>
+                        <a class="btn btn-sm btn_edit" href="{{ path('app_admin_about_edit', {'id': about.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

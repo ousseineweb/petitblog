@@ -5,7 +5,20 @@
 {% block main %}
 
 <div class="content">
-    <h1 class="app_title">{{ controller_name }}</h1>
+    <div class="app_title">
+        <h1 class="title">{{ controller_name }}</h1>
+    </div>
+
+    <div class="contain">
+        <div class="posts">
+            {% for post in posts %}
+                {% include 'components/_card.html.twig' %}
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            {{ knp_pagination_render(posts) }}
+        </div>
+    </div>
 </div>
 
 {% endblock %}

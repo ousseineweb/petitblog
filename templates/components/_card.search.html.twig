@@ -1,0 +1,13 @@
+<div class="card">
+    <h3 class="card-title">{{ post.document.title }}</h3>
+    <div class="card-body">
+        <span class="card-date">
+            Date de publication :
+            {{ post.document.createdAt ? post.document.createdAt|date('d-m-Y à H:i') : '' }}
+        </span>
+        <div class="card-summary">{{ post.document.summary }}</div>
+        <a class="btn_readMore" href="{{ path('app_post', {'slug': post.slug}) }}">
+            Lire l'article <i class="fa-solid fa-angles-right"></i>
+        </a>
+    </div>
+</div>

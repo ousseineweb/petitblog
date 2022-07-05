@@ -1,0 +1,16 @@
+{% extends 'base/admin.html.twig' %}
+
+{% block title 'Admin : Category' %}
+
+{% block admin %}
+    <div class="content">
+        <div class="app_title">
+            <h1 class="title">Create new Category</h1>
+            <div class="btns">
+                <a class="btn btn-sm btn_return" href="{{ path('app_admin_category_index') }}">retour</a>
+            </div>
+        </div>
+
+        {{ include('admin/category/_form.html.twig') }}
+    </div>
+{% endblock %}

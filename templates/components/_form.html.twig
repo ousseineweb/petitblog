@@ -1,0 +1,8 @@
+{{ form_start(commentForm, {attr: {id: 'commentForm'}}) }}
+{{ form_row(commentForm.name) }}
+{{ form_row(commentForm.content) }}
+<div class="form-btn">
+    <button class="btn btn_save">COMMENTER</button>
+    <button class="btn btn_cancel" style="display: none">ANNULER</button>
+</div>
+{{ form_end(commentForm) }}

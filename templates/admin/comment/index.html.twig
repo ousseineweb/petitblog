@@ -1,0 +1,40 @@
+{% extends 'base/admin.html.twig' %}
+
+{% block title 'Admin : Commentaires' %}
+
+{% block admin %}
+    <div class="content">
+        <div class="app_title">
+            <h1 class="title">Comment index</h1>
+        </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Date de publication</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for comment in comments %}
+                <tr>
+                    <td>#{{ comment.id }}</td>
+                    <td>{{ comment.name }}</td>
+                    <td>{{ comment.email }}</td>
+                    <td>{{ comment.publishedAt ? comment.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>
+                        <a class="btn btn-sm btn_show" href="{{ path('app_admin_comment_show', {'id': comment.id}) }}">show</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

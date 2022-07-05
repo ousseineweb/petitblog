@@ -1,11 +1,79 @@
+body.dark-theme {
+    --background: #292a2d;
+    --background-secondary: #3b3d42;
+    --header: #252627;
+    --color: #a9a9b3;
+    --color-secondary: #73747b;
+    --border-color: #4a4b50;
+    --color-show: #DAF7A6;
+    --color-edit: #FFC300;
+    --color-delete: #FF5733;
+    --color-delete-secondary: #E13E1B;
+    --margin-left: 20px;
+}
+
 #admin {
     min-height: 478px;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+.btn-sm {
+    padding: .2rem .6rem;
+    font-size: .875rem;
+    border-radius: .2rem;
+}
+
+.btns {
+    display: flex;
+}
+
+.btn_return {
+    background-color: var(--header);
+    color: var(--color-secondary);
+}
+.btn_return:hover {
+    color: var(--color);
+}
+
+.btn_delete {
+    background-color: var(--color-delete);
+}
+.btn_delete:hover {
+    background-color: var(--color-delete-secondary);
+}
+
+.btn_show {
+    background-color: var(--color-show);
+    color: var(--header);
+}
+.btn_show:hover {
+    background-color: var(--color-edit);
+}
+
+.btn_edit {
+    background-color: var(--color-edit);
+    color: var(--header);
+}
+.btn_edit:hover {
+    background-color: var(--color-show);
+}
+
+.ml {
+    margin-left: var(--margin-left);
+}
+
+nav .form-control {
+    padding: 5px 20px;
 }
 
 .app_title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    margin-bottom: 2rem;
 }
 
 .title {
@@ -23,4 +91,23 @@
 
 .app_title .title-link .fa-house  {
     font-size: 1.6rem;
+}
+
+table td,
+table th {
+    color: var(--color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.date .created-at span,
+.date .updated-at span {
+    font-style: italic;
+}
+
+.date .date-item {
+    color: var(--color-secondary);
+}
+
+.contain {
+    margin-top: 2rem;
 }

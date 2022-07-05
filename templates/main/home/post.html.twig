@@ -1,0 +1,39 @@
+{% extends 'base/main.html.twig' %}
+
+{% block title %}
+    Petitblog : {{ post.title }}
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('post') }}
+{% endblock %}
+
+{% block main %}
+    <div class="content">
+        <h1 class="title">{{ post.title }}</h1>
+
+        <div class="contain">
+            <div class="date"></div>
+
+            <article>{{ post.content | raw }}</article>
+
+            <div class="comments">
+                <h3 class="comment-title">
+                    <i class="fa-solid fa-comments"></i> {{ post.comments | length }} commentaires
+                </h3>
+
+                <div class="comment-form">
+                    {% include 'components/_form.html.twig' %}
+                </div>
+
+                <div class="comment-list">
+                    {% for comment in post.comments %}
+                        {% include 'components/_card.comment.html.twig' with {comment : comment} only %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,14 +1,16 @@
 body.dark-theme {
     --background: #292a2d;
     --background-secondary: #3b3d42;
+    --background-card: #18171B;
     --header: #252627;
     --color: #a9a9b3;
     --color-secondary: #73747b;
     --border-color: #4a4b50;
+    --card-color: #18171B;
 }
 
 
-.app_title {
+.app_title .title {
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -16,4 +18,108 @@ body.dark-theme {
 #main {
     margin: 0;
     padding: 0;
+    min-height: 478px;
 }
+
+.contain {
+    margin-top: 2rem;
+}
+
+.contain .card {
+    background-color: var(--background-card);
+    border-radius: 0;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card .card-title {
+    text-transform: uppercase;
+}
+
+.card .card-body {
+    padding: 1.5rem 0 0;
+}
+
+.card .card-body .card-summary {
+    margin: 1rem 0;
+}
+
+/* form search */
+.search_label {
+    width: 100%;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.search_label svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+.search_input {
+    width: 100%;
+    padding: 7px 10px 6px 40px;
+}
+
+.comments {
+    margin-top: 5rem;
+}
+
+    .comments .comment-title {
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .comments .comment-form {
+        margin: 3rem 0;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .comments .card .card-header {
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+
+    .card-header .fa-user {
+        font-size: 1.5rem;
+    }
+
+    .card-header h5 {
+        margin-left: 10px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-size: .8rem;
+    }
+
+    .comments .card-body .date {
+        margin-bottom: 1rem;
+        padding-left: 20px;
+    }
+
+    .card-body .date .fa-calendar,
+    .card-body .date span {
+        font-style: italic;
+        color: var(--color-secondary);
+    }
+
+    .comment-list .card-content {
+        margin-bottom: 10px;
+    }
+
+    .comment-list .card-reply {
+        border-left: 1px solid var(--border-color);
+        padding-left: 20px;
+        margin-left: 10px;
+    }
+
+    .card-body #commentForm {
+        margin-top: 30px;
+    }
+
+    #commentForm .form-btn {
+        display: flex;
+        align-items: center;
+    }
